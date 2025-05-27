@@ -1,6 +1,5 @@
 import mlflow
 
-# Dùng tên experiment thay vì ID (đảm bảo đúng)
 exp = mlflow.get_experiment_by_name("demo-ai-cicd")
 if exp is None:
     print("Không tìm thấy experiment 'demo-ai-cicd'.")
@@ -14,7 +13,7 @@ if runs.empty:
 best_run = runs.iloc[0]
 print("AI Agent chọn model tốt nhất:")
 print("Run ID:", best_run.run_id)
-print("Accuracy:", best_run.metrics['accuracy'])
+print("Accuracy:", best_run["metrics.accuracy"])
 
 with open("model_to_deploy.txt", "w") as f:
     f.write(best_run.run_id)
