@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-22.04  # ✅ fix lỗi version image
+    runs-on: ubuntu-22.04  # ✅ Đã sửa lỗi version image
 
     steps:
       - name: Checkout code
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: '3.10.12'  # Sử dụng phiên bản cụ thể thay vì 3.10
 
       - name: Install dependencies
         run: |
